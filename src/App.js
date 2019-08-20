@@ -1,26 +1,61 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { connect } from "react-redux";
+import ReactDOM from "react-dom";
+import SpaceShip from './components/space_ship.js';
+import LaserBeam from './components/laser_beam.js';
+import AlienLaser from './components/alien_laser.js';
+import InvasionArmy from './components/invasion_army.js';
+import Modal from './components/modal.js';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+
+class Application extends React.Component {
+    constructor(props) {
+    super(props);
+    this.keydown = this.keydown.bind(this);
+    this.keyup = this.keyup.bind(this);
+  }
+
+    keydown ({key}) { this.props.updateStateKeyDown(key); }
+    keyup ({key}) { this.props.updateStateKeyUp(key); }
+
+     componentDidMount() {
+       window.addEventListener('keydown',this.keydown);
+       window.addEventListener('keyup',this.keyup);
+     }
+
+
+  render() {
+    return <div>
+             <InvasionArmy/>
+             <LaserBeam/>
+              { new Array(4).fill('').map((laser,i) => {
+                    return <AlienLaser id = {i} key = {"key"+i} />;
+                })
+              }
+             <SpaceShip/>
+             <Modal/>
+           </div>;
+  }
 }
 
-export default App;
+//
+
+
+
+const mapApplicationStateToProps = ({ reducer }) => {
+ return {
+
+ };
+};
+
+const mapApplicationDispatchToProps = (dispatch) => ({
+    updateStateKeyDown: key => dispatch({ type:'KEY_DOWN', key }),
+    updateStateKeyUp: key => dispatch({ type:'KEY_UP', key })
+});
+
+export default connect( mapApplicationStateToProps, mapApplicationDispatchToProps )( Application );
+
+
+
+
+////////////////////////////////////////////////////////////////////////////////
