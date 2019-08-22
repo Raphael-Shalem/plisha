@@ -23,10 +23,10 @@ class Modal extends React.Component {
     return <div className="modal" style={ this.props.style }>
              <div className="txt_wrapper">
                <div className="txt0">
-                { !game_over && <p>Controls</p> } ||
-                {  alien_army_destroyed && spaceship_destroyed && <p>You sacrificed yourself to save humanity. Thanks.</p> }||
-                {  spaceship_destroyed  && <p>Looks like you got blown up.<br/>Better luck next time.</p>} ||
-                {  game_over && !spaceship_destroyed  && <p>You have defeated the aliens and saved the world. Well done.</p>}
+                { (!game_over && <p>Controls</p>)  ||
+                  (alien_army_destroyed && spaceship_destroyed && <p>You sacrificed yourself to save humanity. Thanks.</p>) ||
+                  (spaceship_destroyed  && <p>Looks like you got blown up.<br/>Better luck next time.</p>) ||
+                  (game_over && !spaceship_destroyed  && <p>You have defeated the aliens and saved the world. Well done.</p>)
                 }
                </div>
                <div style={show_controls} ><br/>Move Right<br/>Move Left<br/>Fire</div>

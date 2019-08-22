@@ -122,6 +122,24 @@ body{
     animation: blaze 0.17s infinite;
   }
 
+  .blaze2{
+    fill:#a11;
+    animation: blaze 0.17s infinite;
+  }
+
+  @-webkit-keyframes blaze {
+  0%{ transform: translateY(-18px); }
+  50%{ transform: translateY(12px); }
+  100%{ transform: translateY(-18px); }
+  }
+
+  @keyframes blaze {
+  0%{ transform: translateY(-18px); }
+  50%{ transform: translateY(12px); }
+  100%{ transform: translateY(-18px); }
+  }
+/*
+
   @-webkit-keyframes blaze {
   0%{ transform: translateY(-18px); }
   50%{ transform: translateY(12px); }
@@ -134,24 +152,7 @@ body{
   100%{ transform: translateY(-18px); }
   }
 
-
-.blaze2{
-  fill:#a11;
-  animation: blaze 0.17s infinite;
-}
-  @-webkit-keyframes blaze {
-  0%{ transform: translateY(-18px); }
-  50%{ transform: translateY(12px); }
-  100%{ transform: translateY(-18px); }
-  }
-
-  @keyframes blaze {
-  0%{ transform: translateY(-18px); }
-  50%{ transform: translateY(12px); }
-  100%{ transform: translateY(-18px); }
-  }
-
-
+*/
 
   /*//////LASERS*/
 

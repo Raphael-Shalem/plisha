@@ -1,12 +1,8 @@
 import React from 'react';
 import { connect } from "react-redux";
-
+import { TweenMax } from "gsap/TweenMax";
 
 class Invasion_Army extends React.Component {
-/*  constructor(props) {
-    super(props);
-  }
-*/
 
   componentDidUpdate(nextProps) {
    if(nextProps.dead_alien === this.props.dead_alien) { return; }
@@ -16,7 +12,7 @@ class Invasion_Army extends React.Component {
         let rand_x = Math.floor(Math.random() * 400) - 200;
         let rand_y = Math.floor(Math.random() * 400) - 200;
         let exp = { x:rand_x, y:rand_y, opacity:0 };
-    //fix    TweenMax.fromTo("#sqr"+i, 1, center, exp);
+        TweenMax.fromTo("#sqr"+i, 1, center, exp);
       }
     }
    boom();
@@ -40,12 +36,13 @@ class Invasion_Army extends React.Component {
         <div className="wrapper" style={ move_army }>
            { this.props.alien_army.map((health, index) =>
             <div className="alien_div" key={`alien_div_${index}`} style={health?alive:dead} >
-              { (health) &&
-               (<img src ="https://i.pinimg.com/originals/07/78/57/077857e58473a43f07f0626819f3bdba.png"
+              { (health &&
+                <img src ="../images/alien.png"
                       width="100%"
                       className="alien_sprite"
+                      alt="alien"
                 />) ||
-              !health &&
+              (!health &&
                 index === dead_alien &&
                   <svg className="explosion" xmlns="http://www.w3.org/2000/svg">
                     <g>
@@ -57,7 +54,7 @@ class Invasion_Army extends React.Component {
                         />
                       )}
                     </g>
-                  </svg>
+                  </svg>)
               }
             </div>
             )}

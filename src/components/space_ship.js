@@ -1,5 +1,6 @@
 import React from 'react';
 import { connect } from "react-redux";
+import { TweenMax } from "gsap/TweenMax";
 
 class SpaceShip extends React.Component {
 
@@ -11,7 +12,7 @@ class SpaceShip extends React.Component {
         let rand_x = Math.floor(Math.random() * 400) - 200;
         let rand_y = Math.floor(Math.random() * 350) - 200;
         let sqr_ = {x:rand_x, y:rand_y, opacity:0 };
-  //fix      TweenMax.fromTo("#sqr" + i + "_", 1, center, sqr_);
+        TweenMax.fromTo("#sqr" + i + "_", 1, center, sqr_);
       }
     }
     boom_();
@@ -40,9 +41,10 @@ class SpaceShip extends React.Component {
               </g>
            </svg>
            <img
-             src="https://i.pinimg.com/originals/83/31/71/833171037dc8f8a6d1f95209e4ade5fa.png"
+             src="../images/spaceship.png"
              width="77px"
              className="spaceship_img"
+             alt="spaceship"
            />
          </div>
        }
