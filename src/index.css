@@ -279,6 +279,10 @@ body{
 @media only screen and (max-width: 1100px) {
   .screen_too_small{ display:block; }
   .game{ display:none; }
-  #app{ display:none; }
+  .modal{ display:none; }
+  .wrapper{ display:none; }
+  .spaceship_img{ display:none; }
+  .blaze1{ display:none; }
+  .blaze2{ display:none; }
 
 }
