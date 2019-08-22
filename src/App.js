@@ -1,6 +1,5 @@
 import React from 'react';
 import { connect } from "react-redux";
-import ReactDOM from "react-dom";
 import SpaceShip from './components/space_ship.js';
 import LaserBeam from './components/laser_beam.js';
 import AlienLaser from './components/alien_laser.js';

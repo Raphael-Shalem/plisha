@@ -116,39 +116,41 @@ body{
 }
 
 
-.blaze1{
-  fill:#f84;
-  animation: blaze1 0.17s infinite;
+  .blaze1{
 
-  @-webkit-keyframes blaze1 {
+    fill:#f84;
+    animation: blaze 0.17s infinite;
+  }
+
+  @-webkit-keyframes blaze {
   0%{ transform: translateY(-18px); }
   50%{ transform: translateY(12px); }
   100%{ transform: translateY(-18px); }
   }
 
-  @keyframes blaze1 {
+  @keyframes blaze {
   0%{ transform: translateY(-18px); }
   50%{ transform: translateY(12px); }
   100%{ transform: translateY(-18px); }
   }
-}
+
 
 .blaze2{
   fill:#a11;
-  animation: blaze2 0.17s infinite;
-
-  @-webkit-keyframes blaze2 {
-  0%{ transform: translateY(-18px); }
-  50%{ transform: translateY(12px); }
-  100%{ transform: translateY(-18px); }
-  }
-
-  @keyframes blaze2 {
-  0%{ transform: translateY(-18px); }
-  50%{ transform: translateY(12px); }
-  100%{ transform: translateY(-18px); }
-  }
+  animation: blaze 0.17s infinite;
 }
+  @-webkit-keyframes blaze {
+  0%{ transform: translateY(-18px); }
+  50%{ transform: translateY(12px); }
+  100%{ transform: translateY(-18px); }
+  }
+
+  @keyframes blaze {
+  0%{ transform: translateY(-18px); }
+  50%{ transform: translateY(12px); }
+  100%{ transform: translateY(-18px); }
+  }
+
 
 
   /*//////LASERS*/
@@ -196,15 +198,15 @@ body{
 
 
 .alien_sprite {
-  animation: move 0.5s steps(8) infinite;
+  animation: move_ 0.5s steps(8) infinite;
 }
 
-@-webkit-keyframes move {
+@-webkit-keyframes move_ {
 0%{ transform: translateY(-526px); }
 100%{ transform: translateY(76px); }
 }
 
-@keyframes move {
+@keyframes move_ {
 0%{ transform: translateY(-526px); }
 100%{ transform: translateY(76px); }
 }

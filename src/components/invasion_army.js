@@ -3,10 +3,10 @@ import { connect } from "react-redux";
 
 
 class Invasion_Army extends React.Component {
-  constructor(props) {
+/*  constructor(props) {
     super(props);
   }
-
+*/
 
   componentDidUpdate(nextProps) {
    if(nextProps.dead_alien === this.props.dead_alien) { return; }
@@ -40,11 +40,11 @@ class Invasion_Army extends React.Component {
         <div className="wrapper" style={ move_army }>
            { this.props.alien_army.map((health, index) =>
             <div className="alien_div" key={`alien_div_${index}`} style={health?alive:dead} >
-              { health &&
-               <img src ="https://i.pinimg.com/originals/07/78/57/077857e58473a43f07f0626819f3bdba.png"
+              { (health) &&
+               (<img src ="https://i.pinimg.com/originals/07/78/57/077857e58473a43f07f0626819f3bdba.png"
                       width="100%"
                       className="alien_sprite"
-                /> ||
+                />) ||
               !health &&
                 index === dead_alien &&
                   <svg className="explosion" xmlns="http://www.w3.org/2000/svg">
@@ -69,7 +69,7 @@ class Invasion_Army extends React.Component {
 
 
 
-const mapInvasionArmyStateToProps = (reducer) => { 
+const mapInvasionArmyStateToProps = (reducer) => {
   return {
   alien_army:reducer.alien_army,
   army_position_x:reducer.army_position_x,

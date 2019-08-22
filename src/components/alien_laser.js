@@ -2,12 +2,11 @@ import React from 'react';
 import { connect } from "react-redux";
 
 class Alien_Laser extends React.Component {
-  constructor(props) {
+  /*constructor(props) {
     super(props);
-  };
+  };*/
 ///
   render() {
-
     const laser_style = [
       { opacity: this.props.obj0.opacity, transform:`translate3d(${this.props.obj0.pos.x}px,${this.props.obj0.pos.y}px,0)` },
       { opacity: this.props.obj1.opacity, transform:`translate3d(${this.props.obj1.pos.x}px,${this.props.obj1.pos.y}px,0)` },
@@ -16,7 +15,7 @@ class Alien_Laser extends React.Component {
     ];
 
     return (
-        <div className="alien_laser" style={ laser_style[this.props.id] }></div>
+        <div className="alien_laser" style={ laser_style[this.props.id.id] }></div>
     );
   }
 }

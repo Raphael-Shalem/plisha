@@ -2,9 +2,6 @@ import React from 'react';
 import { connect } from "react-redux";
 
 class SpaceShip extends React.Component {
-  constructor(props) {
-    super(props);
-  }
 
  componentDidUpdate(nextProps) {
    if(nextProps.spaceship_destroyed === this.props.spaceship_destroyed) { return; }

@@ -234,7 +234,7 @@ export const reducer = (state = initialState, action) => {
 
     const alien_laser_func = (pos, shooter, set, fired, rand, count, opacity, hit) => {
 
-      opacity = fired&&!hit?1:0;
+      opacity = fired && !hit ? 1 : 0;
 
       //set initial laser location
 
@@ -280,7 +280,7 @@ export const reducer = (state = initialState, action) => {
          ((pos.x - adjustment_x_) <= (spaceship_location_x + spaceship_width)))
          { hit = 1; spaceship_destroyed = 1; game_over = 1; }
 
-  //fix    if((pos.y > edge_of_screen+130) && !game_over){ set = 0, fired = 0, opacity = 0; }
+      if((pos.y > edge_of_screen+130) && !game_over){ set = 0; fired = 0; opacity = 0; }
 
       return { pos, shooter, set, fired, rand, count, opacity, hit }
     };
@@ -361,7 +361,7 @@ export const reducer = (state = initialState, action) => {
       if(state.modal_opacity){
       return { ...initialState }
       }
-
+    break;
   ///////////////////////////////////////////////////////////////////////////
 
     default: return state;
