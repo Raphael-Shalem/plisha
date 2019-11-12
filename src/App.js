@@ -6,6 +6,8 @@ import AlienLaser from './components/alien_laser.js';
 import InvasionArmy from './components/invasion_army.js';
 import Modal from './components/modal.js';
 
+const innerHeight = window.innerHeight;
+const top = (innerHeight - 710) / 2;
 
 class Application extends React.Component {
     constructor(props) {
@@ -24,7 +26,13 @@ class Application extends React.Component {
 
 
   render() {
-    return <div>
+    return <div style={{
+                margin: 'auto',
+                marginTop: top,
+                width: '1260px',
+                height: '710px'
+              }}
+            >
              <InvasionArmy/>
              <LaserBeam/>
               { new Array(4).fill('').map((laser,i) => {

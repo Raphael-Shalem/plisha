@@ -1,4 +1,8 @@
-const initialState = { modal_opacity:1,
+const innerHeight = window.innerHeight;
+const top = (innerHeight - 710) / 2 - 560;
+
+const initialState = {
+                       modal_opacity:1,
                        interval:0,
                        interval_set:0,
                        key:"",
@@ -17,7 +21,7 @@ const initialState = { modal_opacity:1,
                                     1,1,1,1,1,1,1,1,1,1
                                    ],
                        army_position_x:-600,
-                       army_position_y:-560,
+                       army_position_y:top,
                        counter:0,
                        direction:0,
                        alien_speed:2,
@@ -55,7 +59,7 @@ export const reducer = (state = initialState, action) => {
   switch ( type ) {
     case 'UPDATE_INTERVAL':
 
-      let { interval, interval_set, spaceship_location_x, laser_location_x, laser_location_y, counter,
+      let { /*newheight, newheight_set, */interval, interval_set, spaceship_location_x, laser_location_x, laser_location_y, counter,
             direction, army_position_x, army_position_y, alien_speed, shooting_speed, left_flank, right_flank,
             max_right, max_left, dead_rows, dead_alien, dead_alien_counter, laser_opacity, alien_army_destroyed,
             obj0, obj1, obj2, obj3, game_over, modal_opacity
@@ -242,7 +246,7 @@ export const reducer = (state = initialState, action) => {
 
         if(!set || !alien_army[shooter]){
             const adjustment_x = army_position_x + 616 + (alien_width/2);
-            const adjustment_y = army_position_y + 550 + (alien_height/2);
+            const adjustment_y = army_position_y + 550 /*+ (alien_height/2)*/;
             let { x, y } = get_random_alien(alien_army.slice(), left_flank, 10-right_flank);
             shooter = x + y;
             x = x*(alien_width+column_gap) + adjustment_x;
@@ -302,6 +306,7 @@ export const reducer = (state = initialState, action) => {
       // // // // // // // // // // // // // // // // // // // // // // // // // //
 
         return { ...state,
+            //   newheight_set,
                interval,
                interval_set,
                spaceship_location_x,
@@ -333,6 +338,7 @@ export const reducer = (state = initialState, action) => {
                game_over,
                modal_opacity
              };
+
 
   //////////////////////KEY_DOWN///////////////////////////////////////////////////////////////////////////
 

@@ -1,8 +1,6 @@
 import React from 'react';
 import { connect } from "react-redux";
 
-
-
 class Modal extends React.Component {
   constructor(props) {
         super(props);
